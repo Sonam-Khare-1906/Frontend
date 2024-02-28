@@ -1,0 +1,61 @@
+<app-header></app-header>
+<div class="container-fluid" style="background-color: rgb(243, 227, 227);">
+    <div class="row">
+        <div class="container">
+            <div class="search_wrap search_wrap_1">
+                <div class="search_box">
+                    <input #searchInput (keyup)="searchByKeyword(searchInput.value)" [(ngModel)]="searchTerm" class="input" type="text" name="searchKey" placeholder="Search any Product" style="margin-top: 40px;" id="searchKey">
+                    <button class="btn btn-common" style="margin-top: 40px;">
+                        <i class="fas fa-search" style="margin-top: 10px; color: #fff;"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+                    <!-- <h3 class="mb-0 font-weight-semibold" style="margin-left: 50px;">Price: {{ product.pprice }}</h3>
+                    <button [routerLink]="['/products', product.pid]" class="btn btn-sm btn-dark mt-2">
+                        <i class="fa fa-solid fa-info mr-2"></i>&nbsp;View Details
+                    </button>
+                    <button (click)="addtocart(product)" class="btn btn-sm btn-warning mt-2">
+                        <i class="fa fa-cart-plus mr-2"></i>&nbsp;Add to cart
+                    </button>&nbsp;
+                    <button (click)="removeitem(product)" class="btn btn-sm btn-danger mt-2">
+                        <i class="fa fa-remove mr-2"></i>&nbsp;Remove Item
+                    </button>
+                </div> -->
+            <!-- </div> --> 
+        <!-- </div>
+    </div>
+</div>-->
+        <div class="container mt-5">
+            <mat-grid-list cols="4" rowHeight="3:5" gutterSize="10">
+                <mat-grid-tile *ngFor="let p of productDetails">
+                    <div class="row p-5">
+                        <div class="image-container">
+                            <img class="home-page-product-image" [src]="p.productImages[0].url" alt="">
+
+                        </div>
+
+                        <div class="mt-3">
+                            <p><b>{{p.pname}}</b></p>
+                        </div>
+                        <div class="mt-2">
+                            <!--margin top mt-->
+                            <p
+                                style="white-space: inherit;height: 40px;width: 288px;overflow: hidden; text-overflow: ellipsis;">
+                                <i>{{p.pdescription}}</i></p>
+                        </div>
+                        <div class="mt-2">
+                            <!--margin top mt-->
+                            <b>Rs {{p.pprice}}</b>
+                        </div>
+                        <div class="mt-2">
+                            <button type="button" mat-raised-button color="warn"
+                                (click)="showProductDetails(p.pid)">View Details</button>
+                        </div>
+                    </div>
+                </mat-grid-tile>
+            </mat-grid-list>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

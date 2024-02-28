@@ -1,0 +1,84 @@
+<p style="margin-top: 50px"></p>
+
+<div class="container mt-5" style=" margin-top: 50px">
+    <div class="card p-3">
+        <div class="row">
+            <div class="col-6">
+                <form #orderForm="ngForm" (ngSubmit)="placeOrder(orderForm)">
+                    <h1 style="color:red">Order Details</h1>
+                    <label for="fullName">Full Name</label>
+                    <mat-form-field appearance="outline" class="w-100">
+                        <input matInput [(ngModel)]="orderDetails.fullName" placeholder="Full Name" name="fullName">
+                    </mat-form-field>
+
+                    <label for="fullAddress">Full Address</label>
+                    <mat-form-field appearance="outline" class="w-100">
+                        <input matInput [(ngModel)]="orderDetails.fullAddress" placeholder="Full Address" name="fullAddress">
+                    </mat-form-field>
+
+                    <label for="contactNumber">Contact Number</label>
+                    <mat-form-field appearance="outline" class="w-100">
+                        <input matInput [(ngModel)]="orderDetails.contactNumber" placeholder="Contact Number" name="contactNumber">
+                    </mat-form-field>
+                    <div align="right">
+                        <!-- <button type="submit" mat-stroked-button color="white"  style="background-color: #fadb2b;">Place Order</button> -->
+                        <button type="submit"
+                        class="btn btn-success" (click)="logout()">Place Order</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-6">
+<table class="table">
+    <thead class="thead">
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                Amount
+            </th>
+            <!-- <th>
+                Total
+            </th> -->
+        </tr>
+
+    </thead>
+    <tbody class="tbody">
+   <tr *ngFor="let product of productDetails">
+    <td>
+{{product.pname}}
+    </td>
+    <td>
+        {{product.pprice}}
+            </td>
+            <!-- <td> -->
+               <!--#quantity is a element to assigned a particular value -->
+                <!-- <select #quantity class="form-select"[ngModel]="getQuantityForProduct(product.pid)"
+                (change)="onQuantityChanged(+quantity.value,product.pid)">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+            </td> -->
+            <!-- <td>
+                {{getCalculatedTotal(product.pid,product.pprice)}}
+                
+            </td> -->
+   </tr>
+
+   <tr>
+    <td>
+
+    </td>
+    <td></td>
+     <!-- <td>{{ getCalculatedGrandTotal() }}</td>  -->
+   </tr>
+    </tbody>
+</table>
+          
+        </div>
+</div>
+    </div>
+</div>
+<app-footer></app-footer>

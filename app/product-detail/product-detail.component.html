@@ -1,0 +1,70 @@
+<p>product-detail works!</p>
+
+<!--Single Product display-->
+<!-- <div class="container" >
+    <div class="row product-detail">
+        <div class="col-sm-3">
+            <div class="card-img-actions">
+                <img [src]="product.images" class="card-img img-fluid">
+            </div>
+            <div>
+                <button class="btn btn-primary"  (click)="addcart(product)" style="margin-top:20px;">Buy Now</button>&nbsp;
+                <button (click)="removeitem(product)" *ngIf="showremove" class="btn btn-success" style="margin-top:20px;">Remove</button>&nbsp;
+              
+            </div>
+        </div>
+
+    <div class="col-sm-8">
+        <div>
+            <h3>{{ product.pname }}</h3>
+            <p style="color: green;">Special Price</p>
+            <h4>Price:&nbsp;{{ product.pprice }}</h4>
+            <strong>Category:&nbsp;Flowers</strong><br>
+            <strong>Description:</strong><br>
+            <h4>{{ product. pdescription }}</h4> -->
+
+ <!--<p>Their stems are usually prickly and their glossy, green leaves have toothed edges.
+     Rose flowers vary in size and shape. 
+     They burst with colours ranging from pastel pink, peach, and cream, to vibrant yellow, orange, and red. Many roses are fragrant, and some produce berry-like fruits called hips.</p> -->
+     <!-- <p style="color: green;">Discount: 2%</p><br>
+     <strong>Stocks:5 Units left</strong><br>
+     <button class="btn btn-warning text-light" (click)="goBack()">Back</button>
+        </div>
+    </div>
+</div>
+</div>-->
+<div class="container">
+    <div class="row">
+        <div class="col-6" style="margin-bottom: 100px;margin-top: 20px;">
+            <div class="card image-container p-3">
+                <img [src]="product?.productImages?.[selectedProductIndex]?.url" class="product-zoom-image">
+            </div>
+            <div class="mt-2">
+           <mat-grid-list cols="3" guttersize="10" rowHeight="1:1">
+            <mat-grid-tile *ngFor="let file of product?.productImages;let i=index;"  (click)="changeIndex(i)"style="border:  1px solid lightgray;
+            cursor: pointer;">
+                <img [src]="file.url" height="100px">
+            </mat-grid-tile>
+           </mat-grid-list>
+        </div>
+        </div>
+        <div class="col-6" style="margin-bottom: 100px;margin-top: 70px;">
+            <div class="product-information">
+                <div class="mt-3">
+                    <h2> {{product?.pname}}</h2>
+                </div>
+                <div class="mt-3">
+                    Description<br> {{product?.pdescription}} 
+                </div>
+                <div>
+                    <h2>Rs. {{product?.pprice}}</h2>
+                </div>
+                <div class="mt-5 text-center">
+                    <button mat-raised-button color="warn" style="width: 200px;" (click)="buyProduct(product?.pid)">Buy Now</button>
+                    <button mat-raised-button  style="width: 200px;" (click)="addcart(product?.pid)">&nbsp;&nbsp;Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer> <!-- Make sure there's no whitespace between the tags -->

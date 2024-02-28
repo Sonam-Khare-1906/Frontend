@@ -1,0 +1,80 @@
+*{
+    margin:0;
+    padding:0;
+    font-family: "Open Sans,sans-serif";
+    box-sizing: border-box;
+
+}
+
+
+body{
+    min-height: 100vh;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-section{
+    background: url('/assets/Flowers/a.jpg') no-repeat left;
+    background-size: 45%;
+    overflow:hidden;
+    padding:50px 50px 50px 50px;
+    margin:100px 50px 50px 50px;
+    /* height: 80; */
+
+}
+h1{
+    margin-left: 20px;
+}
+.inner-container{
+    width:55%;
+    float:right;
+    padding:0 150px;
+}
+.inner-container h1{
+    margin-bottom: 30px;
+    font-size: 30px;
+    font-weight: 900;
+}
+.text{
+    font-size:18px;
+    color:#545454;
+    line-height: 25px;
+    text-align: justify;
+    padding:  20px;
+
+}
+.skills{
+    display:flex;
+    justify-content: space-between;
+    font-weight: 700;
+    font-size: 17px;
+}
+@media screen and (max-width:1200px){
+    .inner-container{
+        padding:80px;
+    }
+    
+}
+@media screen and (max-width:1000px){
+    .about-section{
+        background-size: 100%;
+        padding:100px 40px;
+    }
+    .inner-container{
+        width:100%;
+    }
+    
+}
+
+@media screen and (max-width:500px){
+    .about-section{
+        background-size: 100%;
+        padding:0;
+    }
+    .inner-container{
+        padding:60px;
+        
+    }
+   
+}

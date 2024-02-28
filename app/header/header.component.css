@@ -1,0 +1,53 @@
+img.logo {
+  width: 10px; /* Set the width according to your design */
+  height: 10px; /* Set the height according to your design */
+  border-radius: 100%; /* Make the image circular */
+}
+
+a.logo {
+  position: fixed;
+ /* Adjust the top position as needed */
+  left: 20px; /* Adjust the left position as needed */
+  z-index: 999; /* Ensure it appears above other elements */
+}
+h1 {
+  font-size: xx-large;
+  font-family: Algerian;
+  color: rgb(22, 25, 233);
+}
+
+.container-fluid{
+  height: auto;
+  position: -webkit-sticky;
+  position: sticky;
+  top:0;
+  z-index: 1;
+} 
+/* .menu{
+  width: 400px;
+  float: left;
+  height: 50px;
+  margin-top: 20px;
+}
+ul{
+  margin-left: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+ul li{
+  list-style: none;
+  margin-left: 62px;
+  margin-top: 27px;
+  font-size: 14px;
+}
+ul li a{
+  text-decoration: none;
+  color: rgb(8, 49, 163);
+  font-family: Arial;
+  font-weight: bold;
+  transition: 0.4s ease-in-out;
+}
+ul li a:hover{
+  color: #ff7200;
+} */

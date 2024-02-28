@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flower Arts - E-Commerce Website</title>
+
+    <!-- Font Awesome CDN link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="main">
+        <div class="navbar">
+            <div class="icon">
+                <h2 class="logo"></h2>
+            </div>
+
+            <div class="menu">
+                <ul>
+                    <!-- <li><a href="#">HOME</a></li> -->
+                    <li><a href="aboutus">ABOUT</a></li>
+                    <!-- <li><a href="service">SERVICE</a></li> -->
+                    <li><a href="contact">CONTACT</a></li>
+                    <li><a routerLink="REGISTERATION">REGISTRATION</a></li>
+                </ul>
+            </div>
+
+            <!-- <div class="search">
+                <input class="srch" type="search" placeholder="Type to text">
+                <a href="#"><button class="btn">Search</button></a>
+            </div> -->
+        </div>
+
+        <div class="content">
+            <h1 style="color: #d188fc">Flower-Arts<br><span style="margin-bottom: 500px;"></span><br></h1>
+            <p class="par">“Flowers don't worry about how they're going to bloom.<br>
+                They just open up and turn toward the light and that makes them beautiful.”</p>
+
+            <button class="cn"><a href="productsview">Shop Now</a></button>
+
+            <div class="form">
+                <h2>Login Here</h2>
+                <form [formGroup]="loginform" (ngSubmit)="loginform.status !== 'INVALID' && proceedlogin()">
+                    <input type="text" class="form-control" id="email" placeholder="Email-Id" formControlName="email"
+                        [ngClass]="{ 'error': getControl('email')?.errors && getControl('email')?.touched }"
+                        [(ngModel)]="register.email" style="height: 40px;">
+                    <div *ngIf="getControl('email')?.errors && getControl('email')?.touched">
+                        <small class="text-danger" *ngIf="getControl('email')?.errors?.['required']">Email-Id is
+                            Required</small>
+                        <small class="text-danger" *ngIf="getControl('email')?.errors?.['maxlength']">Only 32
+                            Characters are allowed</small>
+                        <small class="text-danger" *ngIf="getControl('email')?.errors?.['pattern']">Please enter a
+                            valid Email-Id</small>
+                    </div><br>
+
+                    <input type="password" class="form-control" id="password" placeholder="Password"
+                        formControlName="password"
+                        [ngClass]="{ 'error': getControl('password')?.errors && getControl('password')?.touched }"
+                        [(ngModel)]="register.password" style="height: 40px;">
+                    <div *ngIf="getControl('password')?.errors && getControl('password')?.touched">
+                        <small class="text-danger" *ngIf="getControl('password')?.errors?.['required']">Password is
+                            Required</small>
+                        <small class="text-danger"
+                            *ngIf="getControl('password')?.errors?.['max'] || getControl('password')?.errors?.['min']">Password
+                            should be minimum 8 and maximum 32 characters long</small>
+                    </div><br>
+
+                    <div class="button">
+                        <button type="submit" [disabled]="loginform.status === 'INVALID'"
+                            class="btn btn-success">Submit</button>
+                        <button type="submit" class="btn btn-success admin-btn"
+                            [disabled]="loginform.status === 'INVALID'"><a href="admin">Admin</a></button>
+                    </div>
+                </form>
+
+                <p class="link">Do you have an account?</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+<!-- Include the Angular component selector for the footer here -->
+<app-footer></app-footer>
+
+</html>
